@@ -54,12 +54,21 @@ class DiffusionImageGenerator:
 
         log.info(f"Generating image: prompt='{prompt}', seed={seed}")
 
-        image = self.pipe(
-            prompt=prompt,
-            generator=generator,
-            num_inference_steps=4 if "turbo" in self.model_name else 30,
-            guidance_scale=0 if "turbo" in self.model_name else 7.5,
-        ).images[0]
+        # SDXL-Turbo requires guidance_scale=0.0
+        if "turbo" in self.model_name:
+            image = self.pipe(
+                prompt=prompt,
+                generator=generator,
+                num_inference_steps=4,
+                guidance_scale=0.0,
+            ).images[0]
+        else:
+            image = self.pipe(
+                prompt=prompt,
+                generator=generator,
+                num_inference_steps=30,
+                guidance_scale=7.5,
+            ).images[0]
 
         os.makedirs("output", exist_ok=True)
         out_path = f"output/generated_{seed}.png"
