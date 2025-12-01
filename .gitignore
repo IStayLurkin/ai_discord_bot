@@ -1,33 +1,134 @@
-# Environment
-.env
-*.env
-
-# Python cache
+@"
+# ---------------------------------------------------
+# PYTHON BASICS
+# ---------------------------------------------------
 __pycache__/
 *.pyc
-
-# Virtual environments
-venv/
-.venv/
-env/
-
-# Local data files
-memory.json
-long_memory.db
-*.db
-
-# Logs
+*.pyo
+*.pyd
+*.pdb
+*.so
+*.dll
 *.log
+*.tmp
 
-# OS junk
+# Virtual envs
+.venv/
+venv/
+env/
+*.swp
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# ---------------------------------------------------
+# PROJECT-SPECIFIC (GodBot)
+# ---------------------------------------------------
+long_memory.db
+vector_store/
+memory.json
+agent_states/
+plugins_cache/
+
+# Logs + Scheduler
+logs/
+scheduler_jobs.json
+
+# Dashboard caches
+static/__pycache__/
+dashboard_cache/
+
+# Audio / TTS temp files
+audio_cache/
+*.wav
+*.mp3
+
+# ---------------------------------------------------
+# AI / MACHINE LEARNING
+# ---------------------------------------------------
+
+# HuggingFace
+huggingface/
+huggingface_cache/
+hf_cache/
+~/.cache/huggingface/
+
+# Diffusers
+diffusers_cache/
+models/
+checkpoints/
+pipe_cache/
+*.safetensors
+*.ckpt
+
+# Torch CUDA builds
+torch_cache/
+~/.cache/torch/
+*.pt
+*.pth
+
+# ComfyUI / SD related accidental files
+output/
+out/
+outputs/
+
+# Large data files
+*.npz
+*.npy
+*.pickle
+*.pkl
+
+# ---------------------------------------------------
+# NODE / FRONTEND
+# ---------------------------------------------------
+node_modules/
+dist/
+build/
+*.map
+
+# ---------------------------------------------------
+# EDITOR SETTINGS
+# ---------------------------------------------------
+.vscode/
+.cursor/
+.idea/
+*.code-workspace
+
+# ---------------------------------------------------
+# OS GARBAGE FILES
+# ---------------------------------------------------
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Tools / binaries (don't track large files)
-tools/
-tools/*
+# ---------------------------------------------------
+# CONDA (DO NOT TRACK ANY ENV FILES)
+# ---------------------------------------------------
+/conda_envs/
+/envs/
+/pkgs/
+/libs/
+*.conda
+*.tar.bz2
 
-# Temporary or generated files
-repo_tree.txt
+G:/conda_envs/
+G:\conda_envs/
+G:/pip_cache/
+G:\pip_cache/
+G:/diffusers_cache/
+G:\diffusers_cache/
+G:/huggingface/
+G:\huggingface/
 
+# ---------------------------------------------------
+# PRIVATE CONFIGS
+# ---------------------------------------------------
+.env
+*.env.local
+*.token
+*.secret
+*.key
+"@ | Set-Content -Path "G:\bot\ai_discord_bot\.gitignore"
 
