@@ -3,6 +3,11 @@ import asyncio
 import time
 from typing import Callable, Dict, Any
 
+# Phase 11.1 logging
+from godbot.core.logging import get_logger
+
+log = get_logger(__name__)
+
 class ScheduledTask:
     def __init__(self, name: str, interval: int, func: Callable, enabled=True):
         self.name = name

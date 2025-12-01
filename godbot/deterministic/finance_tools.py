@@ -9,6 +9,11 @@ from __future__ import annotations
 import math
 from typing import List, Dict, Tuple
 
+# Phase 11.1 logging
+from godbot.core.logging import get_logger
+
+log = get_logger(__name__)
+
 
 # -------------------------
 # Coast FI Calculator

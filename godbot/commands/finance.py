@@ -2,6 +2,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
+from godbot.core.logging import get_logger
 from godbot.deterministic.finance_tools import (
     coast_fi,
     lean_fi_required,
@@ -9,6 +10,8 @@ from godbot.deterministic.finance_tools import (
     millionaire_timeline,
     fi_age_projection,
 )
+
+log = get_logger(__name__)
 
 
 class Finance(commands.Cog):

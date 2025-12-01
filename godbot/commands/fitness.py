@@ -2,11 +2,15 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
+# Phase 11.1 logging
+from godbot.core.logging import get_logger
 from godbot.deterministic.fitness_tools import (
     strength_percentile,
     generate_training_block,
     recommended_volume,
 )
+
+log = get_logger(__name__)
 
 
 class Fitness(commands.Cog):

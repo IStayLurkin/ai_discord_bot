@@ -2,11 +2,15 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
+# Phase 11.1 logging
+from godbot.core.logging import get_logger
 from godbot.deterministic.nutrition_tools import (
     calculate_macros,
     meal_plan_7_day,
     grocery_list_from_plan,
 )
+
+log = get_logger(__name__)
 
 
 class Nutrition(commands.Cog):

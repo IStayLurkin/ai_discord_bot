@@ -2,6 +2,8 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
+# Phase 11.1 logging
+from godbot.core.logging import get_logger
 from godbot.deterministic.wildrift_tools import (
     analyze_team_comp,
     cc_density,
@@ -10,6 +12,8 @@ from godbot.deterministic.wildrift_tools import (
     counterbuild,
     matchup_advice,
 )
+
+log = get_logger(__name__)
 
 
 class WildRift(commands.Cog):

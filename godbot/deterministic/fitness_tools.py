@@ -8,6 +8,11 @@ from __future__ import annotations
 
 from typing import Dict, List
 
+# Phase 11.1 logging
+from godbot.core.logging import get_logger
+
+log = get_logger(__name__)
+
 
 # -----------------------------------------
 # Strength Percentile Tables (simplified)

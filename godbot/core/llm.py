@@ -2,7 +2,11 @@
 
 from typing import AsyncIterator, Optional, Dict, Any
 
+# Phase 11.1 logging
+from godbot.core.logging import get_logger
 from ollama_client import stream_ollama
+
+log = get_logger(__name__)
 
 
 async def stream_response(
