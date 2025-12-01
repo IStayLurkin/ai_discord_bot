@@ -1,0 +1,33 @@
+# Environment
+.env
+*.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Local data files
+memory.json
+long_memory.db
+*.db
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Tools / binaries (don't track large files)
+tools/
+tools/*
+
+# Temporary or generated files
+repo_tree.txt
+
+

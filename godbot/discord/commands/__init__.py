@@ -1,0 +1,2 @@
+from .finance_cmds import register_finance_commands
+from .wildrift_cmds import register_wildrift_commands

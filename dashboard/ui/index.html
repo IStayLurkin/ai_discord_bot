@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>God Bot Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="sidebar">
+        <h2>God Bot</h2>
+        <button onclick="showPage('logs')">Live Logs</button>
+        <button onclick="showPage('models')">Models</button>
+        <button onclick="showPage('memory')">Memory</button>
+        <button onclick="showPage('plugins')">Plugins</button>
+        <button onclick="showPage('agents')">Agents</button>
+        <button onclick="showPage('voice')">Voice</button>
+    </div>
+
+    <div id="content">
+
+        <!-- LIVE LOGS -->
+        <div id="page-logs" class="page">
+            <h2>Live Logs</h2>
+            <pre id="log-output"></pre>
+        </div>
+
+        <!-- MODEL SWITCHER -->
+        <div id="page-models" class="page">
+            <h2>Model Switcher</h2>
+            <select id="model-list"></select>
+            <button onclick="changeModel()">Apply</button>
+            <p id="model-status"></p>
+        </div>
+
+        <!-- MEMORY VIEWER -->
+        <div id="page-memory" class="page">
+            <h2>User Memory</h2>
+            <textarea id="memory-json"></textarea>
+            <button onclick="saveMemory()">Save</button>
+        </div>
+
+        <!-- PLUGINS -->
+        <div id="page-plugins" class="page">
+            <h2>Plugins</h2>
+            <div id="plugin-list"></div>
+        </div>
+
+        <!-- AGENTS -->
+        <div id="page-agents" class="page">
+            <h2>Agents</h2>
+            <div id="agents-output"></div>
+            <h3>Create Agent</h3>
+            <input id="agent-name" placeholder="Agent name">
+            <input id="agent-model" placeholder="Model (e.g., dolphin-llama3:latest)">
+            <button onclick="createAgent()">Create</button>
+            <h3>Kill Agent</h3>
+            <input id="kill-agent-name" placeholder="Agent name">
+            <button onclick="killAgent()">Kill</button>
+        </div>
+
+        <!-- VOICE -->
+        <div id="page-voice" class="page">
+            <h2>Voice Agent</h2>
+            <p id="voice-status">Status: Loading...</p>
+            <button onclick="voiceOn()">Enable</button>
+            <button onclick="voiceOff()">Disable</button>
+        </div>
+
+    </div>
+
+<script src="app.js"></script>
+</body>
+</html>

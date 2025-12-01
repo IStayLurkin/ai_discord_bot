@@ -1,0 +1,8 @@
+{
+  "baron": ["aatrox", "camille", "darius", "fiora", "garen", "jackson", "kayle", "nasus", "renekton", "sett", "shen", "tryndamere"],
+  "mid": ["ahri", "annie", "akali", "corki", "lux", "yasuo", "ziggs", "veigar", "galio"],
+  "jungle": ["vi", "shyvana", "leesin", "kayn", "jarvan", "masteryi", "rengar", "khazix", "eve"],
+  "adc": ["jinx", "caitlyn", "ashe", "lucian", "ezreal", "vayne", "xayah", "zeri"],
+  "support": ["leona", "thresh", "braum", "nautilus", "morgana", "rakan", "sona", "lulu"]
+}
+

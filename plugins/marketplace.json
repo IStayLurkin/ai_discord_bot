@@ -1,0 +1,13 @@
+[
+  {
+    "name": "friendly_mode",
+    "type": "behavior",
+    "repo": "https://raw.githubusercontent.com/someuser/friendly-mode/main/"
+  },
+  {
+    "name": "osint_tool",
+    "type": "python-tool",
+    "repo": "https://raw.githubusercontent.com/someuser/osinttool/main/"
+  }
+]
+
