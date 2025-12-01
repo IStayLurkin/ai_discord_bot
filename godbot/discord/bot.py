@@ -18,6 +18,7 @@ from personality import PersonalityManager
 import audio
 import dashboard
 from godbot.core.scheduler import Scheduler
+from godbot.plugins.loader import plugin_manager
 import scheduled_tasks.memory_cleanup as task_memory_cleanup
 import scheduled_tasks.plugin_autoreload as task_plugin_reload
 import scheduled_tasks.daily_report as task_daily_report
@@ -55,6 +56,16 @@ class MyClient(discord.Client):
         dashboard.start_dashboard(self, port=5000)
         print("Dashboard running on http://localhost:5000")
         asyncio.create_task(self.autoupdater())
+        
+        # Load all plugins (Phase 11.2)
+        discovered = plugin_manager.discover_plugins()
+        for module_name in discovered:
+            plugin_manager.load_plugin(module_name, self)
+        print(f"Plugins loaded: {plugin_manager.list_plugins()}")
+        
+        # Register generation commands (Phase 11.9C)
+        from godbot.commands.generation import setup as setup_generation
+        await setup_generation(self)
         
         # Register scheduled tasks (Phase 12)
         self.scheduler.add("heartbeat", 60, task_ping_test.ping_test)

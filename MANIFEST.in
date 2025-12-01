@@ -1,3 +1,16 @@
-include README.md
-recursive-include data *
+# Include dashboard templates
+recursive-include godbot/dashboard/templates *.html
 
+# Include Wild Rift data
+recursive-include data/wild_rift_builds *.md
+
+# Exclude sensitive files
+exclude .env
+exclude logs/*
+exclude jobs.json
+
+# Include plugin files
+recursive-include godbot/plugins *.py
+
+# Include readme
+include README.md

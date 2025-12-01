@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "godbot"
 version = "0.1.0"
-description = "Modular Discord AI bot platform"
+description = "Modular Discord AI bot platform with dashboard, plugins, LLM engine, and media generation."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -16,6 +16,13 @@ dependencies = [
     "python-dotenv",
     "numpy",
     "pytest",
+    "transformers",
+    "diffusers",
+    "accelerate",
+    "pillow",
+    "opencv-python",
+    "imageio",
+    "moviepy",
 ]
 
 [project.scripts]
@@ -28,7 +35,9 @@ include-package-data = true
 where = ["."]
 
 [tool.setuptools.package-data]
-godbot = ["../data/wild_rift_builds/*.md"]
+godbot = [
+    "dashboard/templates/*.html",
+]
 
 [tool.ruff]
 line-length = 120

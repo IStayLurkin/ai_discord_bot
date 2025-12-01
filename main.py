@@ -143,12 +143,14 @@ from godbot.discord.commands import (
     register_finance_commands,
     register_wildrift_commands,
 )
+from godbot.commands.plugins import register_plugin_commands
 
 client = create_client(intents)
 
 # Register modular slash commands
 register_finance_commands(client)
 register_wildrift_commands(client)
+register_plugin_commands(client)
 
 async def run_agent(interaction, prompt):
     try:

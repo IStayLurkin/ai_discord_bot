@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generation</title>
+    <style>
+        body { background:#111; color:#eee; font-family:Arial; padding:40px; }
+        a { color:#4CC9F0; }
+        .box { background:#222; padding:20px; border-radius:10px; margin-bottom:20px; }
+        input, textarea, select {
+            width:100%; padding:10px; background:#1a1a1a;
+            color:#eee; border:1px solid #333; margin-bottom:10px;
+        }
+        button {
+            padding:10px 20px;
+            background:#4CC9F0;
+            border:none;
+            color:#000;
+            font-weight:bold;
+            cursor:pointer;
+        }
+        img, video { max-width:100%; margin-top:20px; }
+    </style>
+</head>
+<body>
+    <h1>Image & Video Generation</h1>
+
+    <div class="box">
+        <form method="POST">
+            <textarea name="prompt" placeholder="Enter prompt here...">{{ prompt or "" }}</textarea>
+            <input type="text" name="seed" placeholder="Seed (optional)">
+            <select name="mode">
+                <option value="image">Image</option>
+                <option value="video">Video</option>
+            </select>
+            <button>Generate</button>
+        </form>
+    </div>
+
+    {% if output %}
+        <div class="box">
+            <p>Generated file:</p>
+            {% if output.endswith(".png") %}
+                <img src="/{{ output }}">
+            {% else %}
+                <video controls src="/{{ output }}"></video>
+            {% endif %}
+            <p><b>Path:</b> {{ output }}</p>
+        </div>
+    {% endif %}
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>
+
